@@ -297,43 +297,32 @@ void LoadPlugin()
 	Log::GetLog()->info("  - /engrams                    Unlocks all engrams");
 	Log::GetLog()->info("  - /unlock                     Unlocks all engrams");
 
-	//if (bUseChatCommand)
-	//{
-		ArkApi::GetCommands().AddChatCommand("/unlockengrams", &UnlockEngrams);
-		ArkApi::GetCommands().AddChatCommand("/engrams", &UnlockEngrams);
-		ArkApi::GetCommands().AddChatCommand("/unlock", &UnlockEngrams);
+	ArkApi::GetCommands().AddChatCommand("/unlockengrams", &UnlockEngrams);
+	ArkApi::GetCommands().AddChatCommand("/engrams", &UnlockEngrams);
+	ArkApi::GetCommands().AddChatCommand("/unlock", &UnlockEngrams);
 
-		ArkApi::GetCommands().AddChatCommand("/save", &SaveConfig);
-		ArkApi::GetCommands().AddChatCommand("/toggle", &Toggle);
-		ArkApi::GetCommands().AddChatCommand("/toggle", NULL);
-		ArkApi::GetCommands().AddChatCommand("/dump", NULL);
-	//}
+	ArkApi::GetCommands().AddChatCommand("/save", &SaveConfig);
+	ArkApi::GetCommands().AddChatCommand("/toggle", &Toggle);
+	ArkApi::GetCommands().AddChatCommand("/toggle", NULL);
+	ArkApi::GetCommands().AddChatCommand("/dump", NULL);
 
-	//if (bAutoLearnEngramsOnLevelUp)
-	//{
-		ArkApi::GetHooks().SetHook("AShooterPlayerController.ServerRequestLevelUp_Implementation", &Hook_AShooterPlayerController_ServerRequestLevelUp_Implementation, &AShooterPlayerController_ServerRequestLevelUp_Implementation_original);
-	//}
+	ArkApi::GetHooks().SetHook("AShooterPlayerController.ServerRequestLevelUp_Implementation", &Hook_AShooterPlayerController_ServerRequestLevelUp_Implementation, &AShooterPlayerController_ServerRequestLevelUp_Implementation_original);
 }
 #pragma endregion
 
 void UnloadPlugin()
 {
 	Log::GetLog()->info("MyEngramUnlocker - Unloaded plugin");
-	//if (bUseChatCommand)
-	//{
-		ArkApi::GetCommands().RemoveChatCommand("/unlockengrams");
-		ArkApi::GetCommands().RemoveChatCommand("/engrams");
-		ArkApi::GetCommands().RemoveChatCommand("/unlock");
 
-		ArkApi::GetCommands().RemoveChatCommand("/save");
-		ArkApi::GetCommands().RemoveChatCommand("/adminonly");
-		ArkApi::GetCommands().RemoveChatCommand("/dump");
-	//}
-	
-	//if (bAutoLearnEngramsOnLevelUp)
-	//{
-		ArkApi::GetHooks().DisableHook("AShooterPlayerController.ServerRequestLevelUp_Implementation", &Hook_AShooterPlayerController_ServerRequestLevelUp_Implementation);
-	//}
+	ArkApi::GetCommands().RemoveChatCommand("/unlockengrams");
+	ArkApi::GetCommands().RemoveChatCommand("/engrams");
+	ArkApi::GetCommands().RemoveChatCommand("/unlock");
+
+	ArkApi::GetCommands().RemoveChatCommand("/save");
+	ArkApi::GetCommands().RemoveChatCommand("/adminonly");
+	ArkApi::GetCommands().RemoveChatCommand("/dump");
+
+	ArkApi::GetHooks().DisableHook("AShooterPlayerController.ServerRequestLevelUp_Implementation", &Hook_AShooterPlayerController_ServerRequestLevelUp_Implementation);
 }
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
