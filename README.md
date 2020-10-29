@@ -28,15 +28,15 @@ Settings:
   - NotifyPlayerHUD
 
 Admin only commands:
-  - /toggle chatcmd             Toggle use of chat command to unlock engrams
-  - /toggle lvlup               Toggle whether or not engrams autoassign on level-up
-  - /toggle tek                 Toggle whether or not tek is automatically learned
-  - /toggle admin               Toggle admin only mode (only admins can execute /unlock commands)
-  - /toggle ignorelvl           Toggle whether or not level requirements are ignored when unlocking engrams
-  - /dump                       Dumps all engrams to engrams.txt
-  - /save                       Save the config file!
+  - `/toggle chatcmd`             Toggle use of chat command to unlock engrams
+  - `/toggle lvlup`               Toggle whether or not engrams autoassign on level-up
+  - `/toggle tek`                 Toggle whether or not tek is automatically learned
+  - `/toggle admin`               Toggle admin only mode (only admins can execute /unlock commands)
+  - `/toggle ignorelvl`           Toggle whether or not level requirements are ignored when unlocking engrams
+  - `/dump`                       Dumps all engrams to engrams.txt
+  - `/save`                       Save the config file!
   
 Chat commands:
-  - /unlockengrams              Unlocks all engrams
-  - /engrams                    Unlocks all engrams
-  - /unlock                     Unlocks all engrams
+  - `/unlockengrams`              Unlocks all engrams
+  - `/engrams`                    Unlocks all engrams
+  - `/unlock`                     Unlocks all engrams
