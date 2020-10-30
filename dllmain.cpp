@@ -319,7 +319,7 @@ void UnloadPlugin()
 	ArkApi::GetCommands().RemoveChatCommand("/unlock");
 
 	ArkApi::GetCommands().RemoveChatCommand("/save");
-	ArkApi::GetCommands().RemoveChatCommand("/adminonly");
+	ArkApi::GetCommands().RemoveChatCommand("/toggle");
 	ArkApi::GetCommands().RemoveChatCommand("/dump");
 
 	ArkApi::GetHooks().DisableHook("AShooterPlayerController.ServerRequestLevelUp_Implementation", &Hook_AShooterPlayerController_ServerRequestLevelUp_Implementation);
