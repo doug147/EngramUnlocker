@@ -241,7 +241,7 @@ void Toggle(AShooterPlayerController* PlayerController, FString* Message, int Mo
 	{
 		auto ToggleBool = [&p = PlayerController](bool* b, const std::wstring Caption) {
 			*b = !*b;
-			ArkApi::GetApiUtils().SendServerMessage(p, b ? FLinearColor(0.f, 1.f, 0.f, 1.f) : FLinearColor(1.f, 0.f, 0.f, 1.f), L"{} mode is set to {}", Caption.c_str(), *b);
+			ArkApi::GetApiUtils().SendServerMessage(p, *b ? FLinearColor(0.f, 1.f, 0.f, 1.f) : FLinearColor(1.f, 0.f, 0.f, 1.f), L"{} mode is set to {}", Caption.c_str(), *b);
 		};
 
 		if (strcmp(Parsed[1].ToString().c_str(), "chatcmd") == 0) {
